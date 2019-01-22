@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -27,6 +29,11 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     private ViewPager viewPager;
     private List<Fragment> fragments;
    private BottomNavigationView navigation;
+
+    private  Fragment  currentFragment=new Fragment();;
+    private   MapFragment  mapFragment = new MapFragment();
+    private    RecordFragment recordFragment = new RecordFragment();
+    private   PersonFragment personFragment = new PersonFragment();
 
   private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -63,14 +70,15 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         initViewPager();
     }
+   
 
     private void initViewPager() {
         viewPager = (ViewPager) findViewById(R.id.view_pager);
 
         fragments = new ArrayList<Fragment>();
-        fragments.add(new MapFragment());
-        fragments.add(new RecordFragment());
-        fragments.add(new PersonFragment());
+        fragments.add(mapFragment);
+        fragments.add(recordFragment);
+        fragments.add(personFragment);
 
         viewPager.setAdapter(new SectionsPagerAdapter(getSupportFragmentManager(), fragments));
         viewPager.addOnPageChangeListener(this);
