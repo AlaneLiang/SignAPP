@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".map.MapFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <com.baidu.mapapi.map.MapView
+            android:id="@+id/map_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true" />
+  <android.support.constraint.ConstraintLayout
+          android:id="@+id/constraintLayout"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+      <Button android:id="@+id/button_cancel"
+              android:layout_width="35dp"
+              android:layout_height="35dp"
+              android:background="@mipmap/map_fouces"
+              app:layout_constraintStart_toStartOf="@+id/constraintLayout"
+              android:layout_marginStart="16dp"
+              app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+              android:layout_marginBottom="16dp" />
+
+      <android.support.design.widget.FloatingActionButton
+              app:elevation="13dp"
+              app:fabSize="normal"
+              app:rippleColor="#fc6dda"
+              app:backgroundTint="#f91f69"
+              app:pressedTranslationZ="16dp"
+              android:src="@drawable/ic_pets_black_24dp"
+             android:layout_marginRight="20dp"
+              app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+              android:layout_marginBottom="16dp"
+              app:layout_constraintRight_toRightOf="@+id/constraintLayout"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"/>
+  </android.support.constraint.ConstraintLayout>
+
+</FrameLayout>

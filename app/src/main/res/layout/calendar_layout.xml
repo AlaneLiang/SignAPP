@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:background="#dfdfdf"
+
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <LinearLayout android:layout_width="match_parent"
+                  android:background="#fefefe"
+                  android:layout_height="45dp">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="记录"
+                android:gravity="center"
+                android:layout_marginLeft="5dp"
+                android:textColor="#000000"
+                android:textSize="25sp"/>
+    </LinearLayout>
+    <LinearLayout
+            android:layout_marginTop="1dp"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+        <RelativeLayout
+                android:layout_below="@+id/tool_bar_layout"
+                android:id="@+id/calendar_all"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <RelativeLayout
+                    android:layout_marginBottom="10dp"
+
+                    android:background="@color/calendarBg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <RelativeLayout
+                        android:id="@+id/top"
+
+                        android:padding="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <TextView
+
+                            android:layout_centerInParent="true"
+                            android:id="@+id/tv_month"
+                            android:textColor="#768797"
+                            android:layout_centerVertical="true"
+                            android:textSize="18sp"
+                            android:text="2016年8月"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    <TextView
+                            android:layout_marginLeft="10dp"
+                            android:clickable="true"
+                            android:id="@+id/tv_pre"
+                            android:textColor="#4586ED"
+                            android:textSize="18sp"
+                            android:text="7月"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"/>
+
+                    <TextView
+                            android:layout_marginRight="10dp"
+                            android:clickable="true"
+                            android:id="@+id/tv_next"
+                            android:textColor="#4586ED"
+                            android:textSize="18sp"
+                            android:text="8月"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="11dp"/>
+                </RelativeLayout>
+
+                <com.person.lx.sign.customView.CalendarView
+                        android:layout_below="@+id/top"
+                        android:id="@+id/calendar"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"/>
+                <View
+                        android:id="@+id/boder"
+                        android:layout_below="@+id/calendar"
+                        android:background="@color/calendarBg"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+        <include layout="@layout/calendar_time"></include>
+
+        <include layout="@layout/calendar_info"></include>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
