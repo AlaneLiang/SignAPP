@@ -13,9 +13,10 @@
                 android:layout_height="wrap_content"
                 android:text="记录"
                 android:gravity="center"
-                android:layout_marginLeft="5dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="13dp"
                 android:textColor="#000000"
-                android:textSize="25sp"/>
+                android:textSize="22sp"/>
     </LinearLayout>
     <LinearLayout
             android:layout_marginTop="1dp"

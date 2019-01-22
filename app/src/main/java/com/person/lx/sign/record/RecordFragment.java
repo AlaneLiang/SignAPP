@@ -160,12 +160,12 @@ public class RecordFragment extends Fragment implements View.OnClickListener {
         switch (v.getId()){
             case R.id.tv_pre:
                 cal.add(Calendar.MONTH,-1);
-                DayManager.imitateData();
+                //DayManager.imitateData();
                 init();
                 GetYM();
 
                 //mDetailPersenter.init();
-                //showCalendar();
+               showCalendar();
                 calendar.postInvalidate();
 
                 break;
@@ -175,11 +175,15 @@ public class RecordFragment extends Fragment implements View.OnClickListener {
                 init();
                 GetYM();
                 //mDetailPersenter.init();
-                //showCalendar();
+                showCalendar();
                 break;
 
         }
 
+    }
+
+    public void showCalendar() {
+        calendar.setCalendar(cal);
     }
     @Override
     public void onAttach(Context context) {
