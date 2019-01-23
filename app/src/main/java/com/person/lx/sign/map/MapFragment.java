@@ -40,7 +40,15 @@ public class MapFragment extends Fragment {
 
         view = inflater.inflate(R.layout.fragment_map, container, false);
         initView();
-        initLocationOption();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                initLocationOption();
+            }
+        }).start();
+
         return view;
     }
 
@@ -148,6 +156,21 @@ public class MapFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if (hidden){
+            //Fragment隐藏时调用
+            mLocationClient.stop();
+            mMapView.onPause();
+        }else {
+            //Fragment显示时调用
+            mLocationClient.start();
+            mMapView.onResume();
+
+        }
+
+    }
     /**
      * 实现定位回调
      */

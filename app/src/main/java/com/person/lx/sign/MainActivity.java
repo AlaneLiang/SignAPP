@@ -43,18 +43,27 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
             switch (item.getItemId()) {
                 case R.id.nav_sign:
                    viewPager.setCurrentItem(0);
+                    switchFragment(recordFragment,personFragment,mapFragment);
                     return true;
                 case R.id.nav_recorder:
                     viewPager.setCurrentItem(1);
+                    switchFragment(mapFragment,personFragment,recordFragment);
                     return true;
                 case R.id.nav_person:
                     viewPager.setCurrentItem(2);
+                    switchFragment(mapFragment,personFragment,personFragment);
                     return true;
             }
             return false;
         }
     };
-
+    public void switchFragment(Fragment hidden1,Fragment hidden2,Fragment show){
+        getSupportFragmentManager().beginTransaction()
+                .hide(hidden1)
+                .hide(hidden2)
+                .show(show)
+                .commit();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         initViewPager();
     }
-   
+
 
     private void initViewPager() {
         viewPager = (ViewPager) findViewById(R.id.view_pager);
@@ -83,6 +92,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         viewPager.setAdapter(new SectionsPagerAdapter(getSupportFragmentManager(), fragments));
         viewPager.addOnPageChangeListener(this);
         viewPager.setCurrentItem(0);
+        switchFragment(recordFragment,personFragment,mapFragment);
     }
 
     @Override
@@ -94,10 +104,13 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     public void onPageSelected(int i) {
        if (i == 0){
            navigation.setSelectedItemId(R.id.nav_sign);
+           switchFragment(recordFragment,personFragment,mapFragment);
        }else if (i == 1){
            navigation.setSelectedItemId(R.id.nav_recorder);
+           switchFragment(mapFragment,personFragment,recordFragment);
        }else {
            navigation.setSelectedItemId(R.id.nav_person);
+           switchFragment(mapFragment,personFragment,personFragment);
        }
     }
 

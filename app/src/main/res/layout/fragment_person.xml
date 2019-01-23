@@ -1,14 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:id="@+id/layout_person"
              android:layout_width="match_parent"
+             android:background="@drawable/bg"
+              android:orientation="vertical"
              android:layout_height="match_parent"
              tools:context=".person.PersonFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout android:layout_width="match_parent"
+                  android:orientation="horizontal"
+                  android:layout_marginTop="30dp"
+                  android:textStyle="bold"
+                  android:layout_marginLeft="20dp"
+                  android:layout_height="wrap_content">
+    <com.person.lx.sign.customView.CircleImageView
+        android:layout_width="60dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_height="60dp"/>
+        <TextView
+                android:layout_marginLeft="15dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:text="梁旭"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <android.support.v7.widget.CardView
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:cardCornerRadius="8dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="person"/>
+            android:layout_height="150dp">
+        <com.person.lx.sign.customView.item_view
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:show_bottomline="true"
+                app:show_leftimg="@drawable/setting"
+                app:show_text="历史记录" />
+    </android.support.v7.widget.CardView>
 
-</FrameLayout>
+</LinearLayout>
