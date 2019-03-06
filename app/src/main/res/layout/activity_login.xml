@@ -102,6 +102,7 @@
                 android:theme="@style/EditScreenTextInputLayoutStyle">
 
             <EditText
+                android:id="@+id/phone_number"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:drawablePadding="16dp"
@@ -121,6 +122,7 @@
                 android:theme="@style/EditScreenTextInputLayoutStyle">
 
             <EditText
+                android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:drawablePadding="16dp"
@@ -144,6 +146,7 @@
 
 
             <Button
+                android:id="@+id/sign_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"

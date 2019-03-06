@@ -7,13 +7,22 @@ public interface LoginContract {
 
     interface View extends BaseView<Present> {
         void loginError(String msg);
-        void loginSuccess();
-        String getAccount();
+        void loginSuccess(String token,String companyId);
+        String getPhone();
         String getPassword();
     }
 
     interface Present extends BasePresenter {
-        void login();
+        void login(String phone,String password);
+    }
+
+   interface LoginModel{
+         void containLoginResponseData(String phone,String password,CallBack callBack);
+
+         interface CallBack{
+            void loginSuccess(String token,String companyId);
+            void loginFailed(String result);
+        }
     }
 
 

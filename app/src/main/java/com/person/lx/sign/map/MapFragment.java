@@ -3,6 +3,7 @@ package com.person.lx.sign.map;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -11,13 +12,17 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.baidu.location.*;
 import com.baidu.mapapi.map.*;
 import com.person.lx.sign.R;
+import com.person.lx.sign.bean.CompanyBean;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
-public class MapFragment extends Fragment {
+public class MapFragment extends Fragment implements MapContract.View{
     private static  final String MapFragment_TAG = "MapFragment";
     private Context mcontext;
     private MapView mMapView = null;
@@ -25,6 +30,7 @@ public class MapFragment extends Fragment {
     private BaiduMap mBaiduMap;
     public LocationClient mLocationClient = null;
     private BDLocation location;
+    private MapContract.Present present;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +46,7 @@ public class MapFragment extends Fragment {
 
         view = inflater.inflate(R.layout.fragment_map, container, false);
         initView();
-
+        initParams();
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -51,7 +57,10 @@ public class MapFragment extends Fragment {
 
         return view;
     }
+    private void initParams() {
+        present = new MapPresenter(this);
 
+    }
     private void initView(){
         mMapView= (MapView) view.findViewById(R.id.map_view);
         // 不显示缩放比例尺
@@ -68,6 +77,10 @@ public class MapFragment extends Fragment {
         builder.zoom(15.0f);
         mBaiduMap.setMapStatus(MapStatusUpdateFactory.newMapStatus(builder.build()));
 
+
+    }
+    private void  showMsg(String msg){
+        Toast.makeText(getContext(),msg,Toast.LENGTH_SHORT).show();
     }
     /**
      * 初始化定位参数配置
@@ -171,6 +184,19 @@ public class MapFragment extends Fragment {
         }
 
     }
+
+    @Override
+    public String getCompanyId() {
+        SharedPreferences preferences = getActivity().getSharedPreferences("data",MODE_PRIVATE);
+        String companyId = preferences.getString("companyId","");
+        return companyId;
+    }
+
+    @Override
+    public void initCompanyLocation(CompanyBean info) {
+
+    }
+
     /**
      * 实现定位回调
      */
