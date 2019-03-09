@@ -16,7 +16,7 @@
           android:id="@+id/constraintLayout"
           android:layout_width="match_parent"
           android:layout_height="match_parent">
-      <Button android:id="@+id/button_cancel"
+      <Button android:id="@+id/map_init"
               android:layout_width="35dp"
               android:layout_height="35dp"
               android:background="@mipmap/map_fouces"
@@ -26,6 +26,7 @@
               android:layout_marginBottom="16dp" />
 
       <android.support.design.widget.FloatingActionButton
+              android:id="@+id/float_button"
               app:elevation="13dp"
               app:fabSize="normal"
               app:rippleColor="#fc6dda"

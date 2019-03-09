@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="200dp"
+
+              android:layout_height="280dp">
+    <LinearLayout
+        android:background="@color/arc_blue"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:gravity="center"
+            android:textSize="27sp"
+            android:textColor="#ffff"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:text="签到成功"
+            android:layout_width="200dp"
+            android:layout_height="80dp"/>
+    </LinearLayout>
+    <com.person.lx.sign.customView.DrawHookView
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center"
+        android:layout_width="200dp"
+        android:layout_height="200dp"/>
+</LinearLayout>

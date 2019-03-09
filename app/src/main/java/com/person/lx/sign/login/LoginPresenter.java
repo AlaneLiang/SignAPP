@@ -19,14 +19,14 @@ public class LoginPresenter implements LoginContract.Present {
     public void login(String phone,String password) {
            loginModel.containLoginResponseData(phone, password, new LoginContract.LoginModel.CallBack() {
                @Override
-               public void loginSuccess(final String token,final String companyId) {
+               public void loginSuccess(final String token,final String companyId,final String phone) {
                    //handler交给主线程更新UI
                    mHandler.postDelayed(new Runnable() {
                        @Override
                        public void run() {
-                          mView.loginSuccess(token,companyId);
+                          mView.loginSuccess(token,companyId,phone);
                        }
-                   },2000);
+                   },500);
                }
 
                @Override
@@ -37,7 +37,7 @@ public class LoginPresenter implements LoginContract.Present {
                           mView.loginError(result);
 
                        }
-                   },2000);
+                   },500);
                }
            });
     }

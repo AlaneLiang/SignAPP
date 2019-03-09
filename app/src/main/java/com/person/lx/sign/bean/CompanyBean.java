@@ -1,6 +1,7 @@
 package com.person.lx.sign.bean;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 public class CompanyBean {
     private static final long serialVersionUID = 1L;
@@ -51,12 +52,12 @@ public class CompanyBean {
     /**
      * 创建时间
      */
-    private LocalDateTime inserttime;
+    private String inserttime;
 
     /**
      * 修改时间
      */
-    private LocalDateTime updatetime;
+    private String updatetime;
 
     public String getIcon() {
         return icon;
@@ -122,18 +123,28 @@ public class CompanyBean {
     public void setIsactive(Boolean isactive) {
         this.isactive = isactive;
     }
-    public LocalDateTime getInserttime() {
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getInserttime() {
         return inserttime;
     }
 
-    public void setInserttime(LocalDateTime inserttime) {
+    public void setInserttime(String inserttime) {
         this.inserttime = inserttime;
     }
-    public LocalDateTime getUpdatetime() {
+
+    public String getUpdatetime() {
         return updatetime;
     }
 
-    public void setUpdatetime(LocalDateTime updatetime) {
+    public void setUpdatetime(String updatetime) {
         this.updatetime = updatetime;
     }
 

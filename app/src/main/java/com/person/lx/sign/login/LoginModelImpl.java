@@ -15,7 +15,10 @@ public class LoginModelImpl implements LoginContract.LoginModel {
     public void containLoginResponseData(String phone, String password, CallBack callBack) {
         postLogin(Consts.url+"app/login",phone,password,callBack);
     }
-private void postLogin(String url,String phone, String password,final CallBack callBack){
+
+
+
+    private void postLogin(String url,String phone, String password,final CallBack callBack){
     OkGo.<String>post(url)
             .tag(this)
             .params("phone", phone)
@@ -30,7 +33,7 @@ private void postLogin(String url,String phone, String password,final CallBack c
 
                    if (result.get("code").toString().equals(Consts.SUCCESS_CODE)){
                        Map<String,Object> str = (Map<String, Object>) result.get("result");
-                       callBack.loginSuccess(str.get("token").toString(),str.get("companyId").toString());
+                       callBack.loginSuccess(str.get("token").toString(),str.get("companyId").toString(),str.get("phone").toString());
                    }else {
                        callBack.loginFailed(result.get("msg").toString());
                    }
@@ -41,7 +44,7 @@ private void postLogin(String url,String phone, String password,final CallBack c
                 public void onError(Response<String> response) {
                     super.onError(response);
 
-                    callBack.loginFailed(response.body());
+                    callBack.loginFailed(Consts.SERVRCE_ERROR);
                 }
             });
 }

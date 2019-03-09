@@ -108,10 +108,11 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
         editor.commit();
 }
     @Override
-    public void loginSuccess(String token,String companyId) {
+    public void loginSuccess(String token,String companyId,String phone) {
         dialog.dismiss();
         storge("token",token);
         storge("companyId",companyId);
+        storge("phone",phone);
         Intent intent = new Intent();
         //setClass函数的第一个参数是一个Context对象
         //Context是一个类，Activity是Context类的子类，也就是说，所有的Activity对象，都可以向上转型为Context对象
