@@ -72,16 +72,18 @@
     </LinearLayout>
 
     <TextView
+            android:id="@+id/saying"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/linearLayout"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="14dp"
             android:fontFamily="@font/calibri"
             android:gravity="center"
-            android:text="We pursue a relaxed gaming experience"
+            android:text="美好的一天，从这里开始！"
             android:textColor="#9affffff"
-            android:textSize="10sp" />
+            android:textStyle="bold"
+            android:textSize="16sp" />
 
 
     <LinearLayout
@@ -165,6 +167,7 @@
 
 
         <TextView
+            android:id="@+id/forget_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"

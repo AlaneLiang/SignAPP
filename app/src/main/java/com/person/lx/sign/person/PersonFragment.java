@@ -1,6 +1,7 @@
 package com.person.lx.sign.person;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -14,7 +15,9 @@ import android.widget.LinearLayout;
 import com.person.lx.sign.R;
 import com.person.lx.sign.utils.ImageUtil;
 
-public class PersonFragment extends Fragment {
+import static android.content.Context.MODE_PRIVATE;
+
+public class PersonFragment extends Fragment implements PersonContract.view {
 
     private LinearLayout linearLayout;
     private View view;
@@ -53,6 +56,32 @@ public class PersonFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
 
+    }
+
+    /**
+     * 从SharedPreferences获取存储的值
+     * @param value
+     * @return
+     */
+    private String  getFromSharedPreferences(String value){
+        SharedPreferences preferences = getActivity().getSharedPreferences("data",MODE_PRIVATE);
+        String result = preferences.getString(value,"");
+        return result;
+    }
+    @Override
+    public String getCompanyId() {
+
+        return getFromSharedPreferences("companyId");
+    }
+
+    @Override
+    public String getToken() {
+        return getFromSharedPreferences("token");
+    }
+
+    @Override
+    public String getPhone() {
+        return getFromSharedPreferences("phone");
     }
 
 }

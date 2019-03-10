@@ -28,7 +28,7 @@ import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity implements LoginContract.View, View.OnClickListener {
    private ImageView imageView;
-   private TextView textView;
+   private TextView textView,forgetPassword,saying;
     private LoginContract.Present mPresent;
     private Button signButton;
     private EditText phoneNumber,password;
@@ -57,11 +57,14 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
 
     private void  initViews(){
         imageView = findViewById(R.id.imageView);
+        forgetPassword = findViewById(R.id.forget_password);
         textView = findViewById(R.id.textView);
         phoneNumber = findViewById(R.id.phone_number);
+        saying = findViewById(R.id.saying);
         password = findViewById(R.id.password);
         signButton = findViewById(R.id.sign_button);
         signButton.setOnClickListener(this);
+        forgetPassword.setOnClickListener(this);
         sp=this.getSharedPreferences("data",MODE_PRIVATE);
 
 
@@ -80,18 +83,21 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
             Bitmap bm = ImageUtil.decodeSampledBitmapFromResource(getResources(),R.drawable.good_morning_img,480,720);;
             imageView.setImageBitmap(bm);
             textView.setText("Morning");
+            saying.setText("美好的一天，从这里开始！");
         }
         if (a>12&&a<=18) {
 
             Bitmap bm = ImageUtil.decodeSampledBitmapFromResource(getResources(),R.drawable.good_night_img,480,720);;
             imageView.setImageBitmap(bm);
             textView.setText("Afternoon");
+            saying.setText("忙了一上午了，记得放松一下哦！");
         }
         if (a>18&&a<=24) {
 
             Bitmap bm = ImageUtil.decodeSampledBitmapFromResource(getResources(),R.drawable.good_night_img,480,720);;
             imageView.setImageBitmap(bm);
             textView.setText("Night");
+            saying.setText("忙碌一天了，听一首音乐放松一下！");
         }
     }
 
@@ -119,6 +125,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
         //setClass函数的第二个参数是一个Class对象，在当前场景下，应该传入需要被启动的Activity类的class对象
         intent.setClass(LoginActivity.this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 
     @Override
@@ -152,6 +159,9 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
         switch (id){
             case R.id.sign_button:
                 checkSign();
+                break;
+            case R.id.forget_password:
+                show("请联系管理员重置密码！");
                 break;
         }
     }

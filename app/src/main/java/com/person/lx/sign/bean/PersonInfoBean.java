@@ -7,6 +7,8 @@ public class PersonInfoBean {
     private Integer id;
 
     private Integer sex;
+
+    private String img;
     /**
      * 员工ID
      */
@@ -99,6 +101,14 @@ public class PersonInfoBean {
     }
     public String getPassword() {
         return password;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public void setPassword(String password) {
