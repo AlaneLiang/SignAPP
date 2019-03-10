@@ -5,7 +5,7 @@ import android.os.Handler;
 import com.person.lx.sign.bean.CompanyBean;
 
 public class MapPresenter implements MapContract.Present {
-     final MapContract.View mView;
+     final MapContract.View mView ;
     private MapModel mapModel;
     private Handler mHandler = new Handler();
     public MapPresenter(MapContract.View view){

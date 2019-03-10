@@ -17,7 +17,7 @@
                   android:layout_height="wrap_content">
     <com.person.lx.sign.customView.CircleImageView
         android:layout_width="60dp"
-        android:src="@mipmap/ic_launcher"
+        android:src="@mipmap/logo"
         android:layout_height="60dp"/>
         <TextView
                 android:layout_marginLeft="15dp"
@@ -34,13 +34,46 @@
             android:layout_marginRight="10dp"
             app:cardCornerRadius="8dp"
             android:layout_width="match_parent"
-            android:layout_height="150dp">
-        <com.person.lx.sign.customView.item_view
+            android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.person.lx.sign.customView.item_view
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:show_bottomline="true"
-                app:show_leftimg="@drawable/setting"
-                app:show_text="历史记录" />
-    </android.support.v7.widget.CardView>
+                app:show_leftimg="@drawable/ic_person"
+                app:show_text="个人信息" />
+            <com.person.lx.sign.customView.item_view
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:show_bottomline="true"
+                app:show_leftimg="@drawable/ic_company"
+                app:show_text="公司详情" />
+            <com.person.lx.sign.customView.item_view
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:show_bottomline="true"
+                app:show_leftimg="@drawable/ic_update"
+                app:show_text="版本更新" />
+            <com.person.lx.sign.customView.item_view
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:show_bottomline="false"
+                app:show_leftimg="@drawable/ic_help"
+                app:show_text="帮助与反馈" />
+        </LinearLayout>
 
+    </android.support.v7.widget.CardView>
+    <Button
+        android:layout_marginTop="30dp"
+        android:text="退出登录"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>
