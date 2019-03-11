@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools" package="com.person.lx.sign">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.person.lx.sign">
     //获取设备网络状态，禁用后无法获取网络状态
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     //网络权限，当禁用后，无法进行检索等相关业务
@@ -14,7 +15,9 @@
     //允许sd卡写权限，需写入地图数据，禁用后无法显示地图
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     //这个权限用于进行网络定位
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" tools:ignore="ProtectedPermissions"/>
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
     //这个权限用于访问GPS定位
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     //获取统计数据
@@ -27,36 +30,40 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <!-- 这个权限用于访问GPS定位 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
-            android:name=".BaseActivity"
-            android:allowBackup="true"
-            android:icon="@mipmap/logo"
-            android:label="@string/app_name"
-            android:roundIcon="@mipmap/ic_launcher_round"
-            android:supportsRtl="true"
-            android:theme="@style/AppTheme.NoActionBar">
+        android:name=".BaseActivity"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
         <meta-data
-                android:name="com.baidu.lbsapi.API_KEY"
-                android:value="tx6QGt9pYH1xAbGB54bg9Geai3NEcWmC" />
-        <activity
-                android:name=".MainActivity"
-                android:label="@string/app_name">
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="tx6QGt9pYH1xAbGB54bg9Geai3NEcWmC" />
 
-        </activity>
-        <service android:name="com.baidu.location.f"
-                 android:enabled="true"
-                 android:process=":remote"/>
         <activity
-                android:name=".login.LoginActivity"
-                android:label="@string/title_activity_login"
-                android:theme="@style/AppTheme.NoActionBar">
+            android:name=".MainActivity"
+            android:label="@string/app_name" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+
+        <activity
+            android:name=".login.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".person.info.InfoActivity" />
+        <activity android:name=".person.company.CompanyActivity"></activity>
     </application>
 
 </manifest>

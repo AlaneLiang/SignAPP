@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 public class CompanyBean {
-    private static final long serialVersionUID = 1L;
+
     /**
      * ID
      */
@@ -101,9 +101,7 @@ public class CompanyBean {
     public void setAddress(String address) {
         this.address = address;
     }
-    public String getDesc() {
-        return description;
-    }
+
 
     public Integer getId() {
         return id;
@@ -113,9 +111,7 @@ public class CompanyBean {
         this.id = id;
     }
 
-    public void setDesc(String desc) {
-        this.description = desc;
-    }
+
     public Boolean getIsactive() {
         return isactive;
     }
@@ -157,7 +153,7 @@ public class CompanyBean {
                 ", latitude=" + latitude +
                 ", phone=" + phone +
                 ", address=" + address +
-                ", desc=" + description +
+                ", description=" + description +
                 ", isactive=" + isactive +
                 ", inserttime=" + inserttime +
                 ", updatetime=" + updatetime +

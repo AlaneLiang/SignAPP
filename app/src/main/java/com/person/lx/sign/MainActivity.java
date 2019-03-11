@@ -18,6 +18,8 @@ import com.person.lx.sign.adapter.SectionsPagerAdapter;
 import com.person.lx.sign.map.MapFragment;
 import com.person.lx.sign.person.PersonFragment;
 import com.person.lx.sign.record.RecordFragment;
+import com.person.lx.sign.utils.ActiveActUtil;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         setContentView(R.layout.activity_main);
          initView();
         getPersimmions();//andrid m特有设置
-
+        ActiveActUtil.getInstance().addActivity(this);
 
     }
 

@@ -1,4 +1,4 @@
-package com.person.lx.sign.person;
+package com.person.lx.sign.person.info;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -6,17 +6,15 @@ import com.google.gson.JsonParser;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
-import com.person.lx.sign.bean.SignLogBean;
+import com.person.lx.sign.bean.PersonDeatilBean;
 import com.person.lx.sign.consts.Consts;
 
-public class PersonModel implements PersonContract.model {
-
+public class InfoModel implements InfoContract.model {
     @Override
-    public void initDataModel(String token, String companyId, final initCallBack callBack) {
-        OkGo.<String>post(Consts.url+"app/person/info")
+    public void initDataModel(String token, final getInfoCallBack callBack) {
+        OkGo.<String>post(Consts.url+"app/person/detail")
                 .tag(this)
                 .headers("Token",token)
-                .params("companyId",companyId)
                 .execute(new StringCallback() {
                     @Override
                     public void onSuccess(Response<String> response) {
@@ -25,9 +23,10 @@ public class PersonModel implements PersonContract.model {
                         JsonObject json = (JsonObject) parse.parse(data);
 
                         if (json.get("code").getAsString().equals(Consts.SUCCESS_CODE)){
+                            Gson gson = new Gson();
                             JsonObject info = json.get("result").getAsJsonObject();
-
-                            callBack.success(info.get("img").toString(),info.get("username").getAsString());
+                            PersonDeatilBean personDeatil = gson.fromJson(info.toString(),PersonDeatilBean.class);
+                            callBack.success(personDeatil);
 
                         }else {
                             callBack.fail(json.get("msg").getAsString());

@@ -16,10 +16,12 @@
                   android:layout_marginLeft="20dp"
                   android:layout_height="wrap_content">
     <com.person.lx.sign.customView.CircleImageView
+        android:id="@+id/person_img"
         android:layout_width="60dp"
         android:src="@mipmap/logo"
         android:layout_height="60dp"/>
         <TextView
+            android:id="@+id/person_name"
                 android:layout_marginLeft="15dp"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
@@ -40,24 +42,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <com.person.lx.sign.customView.item_view
+                android:id="@+id/person_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:show_bottomline="true"
                 app:show_leftimg="@drawable/ic_person"
                 app:show_text="个人信息" />
             <com.person.lx.sign.customView.item_view
+                android:id="@+id/person_company"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:show_bottomline="true"
                 app:show_leftimg="@drawable/ic_company"
                 app:show_text="公司详情" />
             <com.person.lx.sign.customView.item_view
+                android:id="@+id/app_version"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:show_bottomline="true"
                 app:show_leftimg="@drawable/ic_update"
                 app:show_text="版本更新" />
             <com.person.lx.sign.customView.item_view
+                android:id="@+id/help_feedback"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:show_bottomline="false"
@@ -67,6 +73,7 @@
 
     </android.support.v7.widget.CardView>
     <Button
+        android:id="@+id/sign_out"
         android:layout_marginTop="30dp"
         android:text="退出登录"
         android:textColor="#ffffff"

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+   >
+<LinearLayout
+    android:layout_marginTop="30dp"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.person.lx.sign.customView.CircleImageView
+        android:id="@+id/person_img"
+        android:layout_width="80dp"
+        android:src="@mipmap/logo"
+        android:layout_height="80dp"/>
+</LinearLayout>
+
+
+    <LinearLayout style="@style/wrap_layout"
+                  android:layout_marginTop="20dp"
+                  android:layout_width="wrap_content">
+        <!-- 上圆角-->
+        <LinearLayout style="@style/top_layout">
+            <ImageView style="@style/img_arrow"
+                       android:src="@drawable/ic_work_id"/>
+            <TextView
+                android:textCursorDrawable="@drawable/edittext_color_cursor"
+                android:background="@null"
+                android:id="@+id/person_work_id"
+                android:textColor="#353535"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="16sp"
+                android:hint="工号"
+                android:textAlignment="center"
+                android:textColorHint="#bfbfbf"
+                />
+
+
+
+        </LinearLayout>
+        <View style="@style/bg_line"/>
+
+        <LinearLayout style="@style/bottom_layout">
+
+            <ImageView style="@style/img_arrow"
+                       android:src="@drawable/ic_person"/>
+
+            <TextView
+                android:textCursorDrawable="@drawable/edittext_color_cursor"
+                android:background="@null"
+                android:id="@+id/person_name"
+                android:textColor="#353535"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="姓名"
+                android:textAlignment="center"
+                android:textColorHint="#bfbfbf"
+                />
+
+        </LinearLayout>
+
+        <View style="@style/bg_line"/>
+
+        <!-- 分割线 -->
+        <LinearLayout style="@style/bottom_layout">
+            <ImageView style="@style/img_arrow"
+                       android:src="@drawable/ic_company"/>
+
+            <TextView
+                android:textCursorDrawable="@drawable/edittext_color_cursor"
+                android:background="@null"
+                android:id="@+id/person_company"
+                android:textColor="#353535"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="公司"
+                android:textAlignment="center"
+                android:textColorHint="#bfbfbf"
+                />
+
+
+
+        </LinearLayout>
+
+        <View style="@style/bg_line"/>
+        <!-- 无圆角-->
+        <LinearLayout style="@style/mid_layout">
+            <ImageView style="@style/img_arrow"
+                       android:src="@drawable/ic_company"/>
+            <TextView
+                android:textCursorDrawable="@drawable/edittext_color_cursor"
+                android:background="@null"
+                android:id="@+id/person_department"
+                android:textColor="#353535"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="部门"
+                android:textAlignment="center"
+                android:textColorHint="#bfbfbf"
+                />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout style="@style/wrap_layout"
+                  android:layout_width="wrap_content">
+        <!-- 上圆角-->
+        <LinearLayout style="@style/top_layout">
+            <ImageView style="@style/img_arrow"
+                       android:src="@drawable/ic_phone"/>
+
+            <TextView
+                android:id="@+id/person_phonenumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="手机号"
+                android:textAlignment="center"
+                android:textColor="#353535"
+                android:textColorHint="#bfbfbf"
+                android:textCursorDrawable="@drawable/edittext_color_cursor"
+                />
+
+        </LinearLayout>
+        <View style="@style/bg_line"/>
+        <!-- 无圆角-->
+        <LinearLayout style="@style/mid_layout">
+            <ImageView style="@style/img_arrow"
+                       android:src="@drawable/ic_email"/>
+            <TextView
+                android:textCursorDrawable="@drawable/edittext_color_cursor"
+                android:background="@null"
+                android:id="@+id/person_email"
+                android:textColor="#353535"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="邮件"
+                android:textAlignment="center"
+                android:textColorHint="#bfbfbf"
+                />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_marginRight="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="60dp"
+        android:textStyle="bold"
+        android:id="@+id/person_editor_password"
+        android:background="@color/colorAccent"
+        android:text="修改密码"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
