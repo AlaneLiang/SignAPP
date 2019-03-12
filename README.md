@@ -1,4 +1,4 @@
-#签到类APP
+# 签到类APP
 
 注意：自己注册个百度安卓sdk，将地图SDK授权码（manifests.xml中）换成自己的
 
