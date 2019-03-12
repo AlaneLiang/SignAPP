@@ -41,7 +41,8 @@
         android:theme="@style/AppTheme.NoActionBar">
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="tx6QGt9pYH1xAbGB54bg9Geai3NEcWmC" />
+            android:value="********" />
+        <!--换成自己的-->
 
         <activity
             android:name=".MainActivity"
